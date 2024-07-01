@@ -1,7 +1,9 @@
-# llm zoomcamp
+# LLM Zoomcamp
 
-setup elasticsearch
-``
+## setup elasticsearch
+
+
+```
 docker run -it \
     --rm \
     --name elasticsearch \
@@ -10,5 +12,16 @@ docker run -it \
     -e "discovery.type=single-node" \
     -e "xpack.security.enabled=false" \
     docker.elastic.co/elasticsearch/elasticsearch:8.4.3
-``
+```
+
+## setup ollama
+
+```
+curl -fsSL https://ollama.com/install.sh | sh
+
+ollama start
+ollama pull phi3
+ollama run phi3
+```
+
 
