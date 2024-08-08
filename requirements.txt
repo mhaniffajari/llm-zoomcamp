@@ -1,3 +1,4 @@
+streamlit
 tdqm 
 notebook==7.1.2 
 openai 
@@ -6,4 +7,4 @@ scikit-learn
 pandas
 mistralai
 jupyterlab
-streamlit
+sentence_transformers==2.7.0
