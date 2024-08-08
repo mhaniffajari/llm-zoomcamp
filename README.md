@@ -1,8 +1,27 @@
 # LLM Zoomcamp
 
+## setup ollama
+
+```
+curl -fsSL https://ollama.com/install.sh | sh
+
+ollama start
+ollama pull phi3
+```
+
+## to test your LLM
+you can use this
+```
+ollama run phi3
+```
+don't forget to type /bye after you test your LLM
+
+## export your OPEN_AI_API_KEY
+export OPEN_AI_API_KEY="yourapi"
+
+
 ## setup elasticsearch
-
-
+you must compromize your 
 ```
 docker run -it \
     --rm \
@@ -11,17 +30,9 @@ docker run -it \
     -p 9300:9300 \
     -e "discovery.type=single-node" \
     -e "xpack.security.enabled=false" \
+    -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
+    -e "xpack.ml.enabled=false" \
     docker.elastic.co/elasticsearch/elasticsearch:8.4.3
-```
-
-## setup ollama
-
-```
-curl -fsSL https://ollama.com/install.sh | sh
-
-ollama start
-ollama pull phi3
-ollama run phi3
 ```
 
 
