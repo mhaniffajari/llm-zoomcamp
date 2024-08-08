@@ -20,7 +20,21 @@ don't forget to type /bye after you test your LLM
 export OPEN_AI_API_KEY="yourapi"
 
 
-## setup elasticsearch
+## setup elasticsearch with optimize performance
+you must compromize your 
+```
+docker run -it \
+    --rm \
+    --name elasticsearch \
+    -p 9200:9200 \
+    -p 9300:9300 \
+    -e "discovery.type=single-node" \
+    -e "xpack.security.enabled=false" \
+    -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
+    -e "xpack.ml.enabled=false" \
+    docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+```
+## setup elasticsearch with optimize performance
 you must compromize your 
 ```
 docker run -it \
@@ -35,4 +49,15 @@ docker run -it \
     docker.elastic.co/elasticsearch/elasticsearch:8.4.3
 ```
 
+## setup elasticsearch
+```
+docker run -it \
+    --rm \
+    --name elasticsearch \
+    -p 9200:9200 \
+    -p 9300:9300 \
+    -e "discovery.type=single-node" \
+    -e "xpack.security.enabled=false" \
+    elasticsearch:8.4.3
+```
 

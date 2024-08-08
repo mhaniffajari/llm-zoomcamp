@@ -1,0 +1,38 @@
+You: Can I join the class?
+You: Can I join the class?
+Bot: The context does not provide any information about whether the person can join the class or not.
+You: the course already started. Can I still enroll the course?
+Bot: Based on the context given, it is not mentioned whether it is possible to enroll in the course after it has already started.
+You: the course already started. Can I still enroll the course?
+Bot: No, based on the context, the question is not answered. The provided information only mentions what can be done before the course starts but does not address whether someone can enroll in the course after it has already started.
+You: the course already started. Can I still enroll the course?
+You: the course already started. Can I still enroll the course?
+Bot: Yes, even if you don't register, you're still eligible to submit the homeworks. Be aware, however, that there will be deadlines for turning in the final projects. So don't leave everything for the last minute.
+You: how to join the course?
+Bot: Yes, even if you don't register, you're still eligible to submit the homeworks.
+You: how to submit the assigment?
+Bot: To submit the assignment, you can use the `spark-submit` command with the following parameters:
+
+URL="spark://$HOSTNAME:7077"
+spark-submit \
+--master=$URL \
+06_spark_sql.py \
+--input_green=data/pq/green/2021/*/ \
+--input_yellow=data/pq/yellow/2021/*/ \
+--output=data/report-2021
+
+If you encounter errors such as "WARN Utils: Your hostname, <HOSTNAME> resolves to a loopback address.." or "Exception in thread "main" org.apache.spark.SparkException: Master must either be yarn or start with spark, mesos, k8s, or local at …", you can try replacing "--master=$URL" with "--master $URL".
+
+For spark version 3.4.2, if you encounter the error "Error: Unrecognized option: --master=", you should replace "--master=$URL" with "--master $URL".
+You: what is pre
+Bot: The homework URL in the homework link is the repository on github, gitlab, bitbucket, or any other location where you have your code.
+You: what is prerequisite to join the class?
+Bot: Based on the given context, the prerequisite to join the class is not provided.
+You: what software I must install to join the class?
+Bot: Based on the given context, there is no mention of any specific software that needs to be installed to join the class.
+You: what python library must I installed before join the class?
+Bot: Based on the given context, the Python library that must be installed before joining the class is Python 3 with Anaconda.
+You: what must I prepare before join the class?
+Bot: Before joining the class, you must prepare by installing and setting up certain dependencies and requirements. These include having a Google cloud account, Google Cloud SDK, Python 3 (installed with Anaconda), Terraform, and Git. Additionally, it is recommended to look over the prerequisites and syllabus to gauge your comfort level with the subject matter.
+You: Helo when the class is start?
+Bot: The course will start on 15th Jan 2024 at 17:00 with the first "Office Hours" live session.

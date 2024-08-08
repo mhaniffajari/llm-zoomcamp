@@ -105,16 +105,42 @@ def rag(query):
 def main():
     st.title('RAG Chatbot')
 
+    chat_history_file = 'chat_history.txt'
+
+    # Load chat history from file
+    if os.path.exists(chat_history_file):
+        with open(chat_history_file, 'r') as f:
+            chat_history = f.readlines()
+    else:
+        chat_history = []
+
     # Input box for user query
     user_input = st.text_input("You: ", "")
 
     if user_input:
+        # Add user input to chat history
+        with open(chat_history_file, 'a') as f:
+            f.write(f"You: {user_input}\n")
+
         # Generate response using the RAG model
         search_results, prompt, response = rag(user_input)
+
+        # Add bot response to chat history
+        with open(chat_history_file, 'a') as f:
+            f.write(f"Bot: {response}\n")
+
+        # Append chat to history list
+        chat_history.append(f"You: {user_input}")
+        chat_history.append(f"Bot: {response}")
 
         # Display Answer
         st.subheader("Answer")
         st.text_area("Answer:", value=response, height=200, max_chars=None, key="answer_area")
+
+    # Display chat history
+    st.subheader("Chat History")
+    for chat in chat_history:
+        st.write(chat)
 
 if __name__ == "__main__":
     main()
