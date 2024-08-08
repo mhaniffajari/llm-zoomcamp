@@ -6,3 +6,4 @@ scikit-learn
 pandas
 mistralai
 jupyterlab
+streamlit
