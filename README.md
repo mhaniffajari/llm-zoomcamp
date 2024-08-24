@@ -17,7 +17,15 @@ ollama run phi3
 don't forget to type /bye after you test your LLM
 
 ## export your OPEN_AI_API_KEY
-export OPEN_AI_API_KEY="yourapi"
+
+
+```
+export OPEN_AI_API_KEY="openapi"
+```
+
+```
+export MISTRAL_AI_API_KEY="mistralapi"
+```
 
 
 ## setup elasticsearch with optimize performance
